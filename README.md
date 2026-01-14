@@ -111,8 +111,9 @@ http://localhost:3000
 Gunakan akun berikut untuk login ke sistem:
 
 Username : admin
-
 Password : 123456
+
+---
 
 **🚀 Fitur Aplikasi**
 
@@ -122,6 +123,7 @@ Password : 123456
 - Relasi master–detail
 - Tampilan antarmuka responsif dan profesional
 
+---
 
 **Link video demo YouTube:**
 https://youtu.be/YEAp24vROH0 
