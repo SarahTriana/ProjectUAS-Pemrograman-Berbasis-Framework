@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Detail Aktivitas</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <a href="/activities" class="back-link">⬅ Kembali</a>
+
+  <div class="info-card">
+    <h2><%= activity.judul_aktivitas %></h2>
+    <div class="info-meta">
+      <span><b>Kategori:</b> <%= activity.kategori %></span>
+      <span><b>Tanggal:</b> <%= activity.tanggal.toLocaleDateString() %></span>
+    </div>
+  </div>
+
+  <!-- TAMBAH DETAIL -->
+  <form method="POST" action="/details/add/<%= activity.id %>" class="form-inline">
+    <input type="text" name="deskripsi_detail" placeholder="Deskripsi Detail" required>
+    <input type="number" name="durasi" placeholder="Durasi (menit)" required>
+    <select name="status" required>
+      <option value="">-- Status --</option>
+      <option value="selesai">Selesai</option>
+      <option value="belum">Belum</option>
+    </select>
+    <button class="btn btn-success">➕ Tambah Detail</button>
+  </form>
+
+  <!-- TABEL DETAIL -->
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Deskripsi</th>
+        <th>Durasi (Menit)</th>
+        <th>Status</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% activity.details.forEach(d => { %>
+      <tr>
+        <td><%= d.id %></td>
+        <td><%= d.deskripsi_detail %></td>
+        <td><%= d.durasi %></td>
+        <td>
+          <span class="badge <%= d.status === 'selesai' ? 'badge-success' : 'badge-warning' %>">
+            <%= d.status %>
+          </span>
+        </td>
+        <td>
+          <a class="btn btn-warning" href="/details/edit/<%= d.id %>/<%= activity.id %>">✏ Edit</a>
+          <a class="btn btn-danger"
+             href="/details/delete/<%= d.id %>/<%= activity.id %>"
+             onclick="return confirm('Yakin hapus detail?')">
+             🗑 Hapus
+          </a>
+        </td>
+      </tr>
+    <% }) %>
+    </tbody>
+  </table>
+
+</div>
+
+</body>
+</html>

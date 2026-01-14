@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Detail Aktivitas</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="box">
+  <h2>✏ Edit Detail Aktivitas</h2>
+
+  <form method="POST" action="/details/edit/<%= detail.id %>/<%= activityId %>">
+
+    <input
+      type="text"
+      name="deskripsi_detail"
+      value="<%= detail.deskripsi_detail %>"
+      placeholder="Deskripsi detail"
+      required
+    >
+
+    <input
+      type="number"
+      name="durasi"
+      value="<%= detail.durasi %>"
+      placeholder="Durasi (menit)"
+      required
+    >
+
+    <select name="status" required>
+      <option value="selesai" <%= detail.status === 'selesai' ? 'selected' : '' %>>
+        Selesai
+      </option>
+      <option value="belum" <%= detail.status === 'belum' ? 'selected' : '' %>>
+        Belum
+      </option>
+    </select>
+
+    <button>💾 Simpan Perubahan</button>
+  </form>
+
+  <a href="/activities/<%= activityId %>">⬅ Kembali ke Detail Aktivitas</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tambah Detail Aktivitas</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="box">
+  <h2>➕ Tambah Detail Aktivitas</h2>
+
+  <form method="POST" action="/details/create/<%= activityId %>">
+    <input type="text" name="deskripsi_detail" placeholder="Deskripsi Detail" required>
+    <input type="number" name="durasi" placeholder="Durasi (menit)" required>
+
+    <select name="status" required>
+      <option value="">-- Pilih Status --</option>
+      <option value="selesai">Selesai</option>
+      <option value="belum">Belum</option>
+    </select>
+
+    <button>Simpan</button>
+  </form>
+
+  <br>
+  <a href="/activities/<%= activityId %>">⬅ Kembali</a>
+</div>
+
+</body>
+</html>

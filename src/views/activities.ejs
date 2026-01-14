@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daftar Aktivitas</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="top">
+    <h2>📋 Daftar Aktivitas</h2>
+    <a href="/logout" class="btn btn-danger">Logout</a>
+  </div>
+
+  <!-- FILTER -->
+  <form method="GET" class="filter-box">
+    <input type="date" name="tanggal" value="<%= filter?.tanggal || '' %>">
+    <input type="text" name="kategori" placeholder="Kategori" value="<%= filter?.kategori || '' %>">
+    <button class="btn btn-primary">🔍 Filter</button>
+  </form>
+
+  <!-- TAMBAH AKTIVITAS -->
+  <form method="POST" action="/activities/add" class="form-inline">
+    <input type="text" name="judul_aktivitas" placeholder="Judul Aktivitas" required>
+    <input type="text" name="kategori" placeholder="Kategori" required>
+    <input type="date" name="tanggal" required>
+    <button class="btn btn-success">➕ Tambah Aktivitas</button>
+  </form>
+
+  <!-- TABEL AKTIVITAS -->
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Judul</th>
+        <th>Kategori</th>
+        <th>Tanggal</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% activities.forEach(a => { %>
+      <tr>
+        <td><%= a.id %></td>
+        <td><%= a.judul_aktivitas %></td>
+        <td><%= a.kategori %></td>
+        <td><%= a.tanggal.toLocaleDateString() %></td>
+        <td>
+          <a class="btn btn-info" href="/activities/<%= a.id %>">👁 Detail</a>
+          <a class="btn btn-warning" href="/activities/edit/<%= a.id %>">✏ Edit</a>
+          <a class="btn btn-danger" href="/activities/delete/<%= a.id %>"
+             onclick="return confirm('Yakin hapus aktivitas?')">
+             🗑 Hapus
+          </a>
+        </td>
+      </tr>
+    <% }) %>
+    </tbody>
+  </table>
+
+</div>
+
+</body>
+</html>

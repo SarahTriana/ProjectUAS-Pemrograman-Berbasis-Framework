@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tambah Aktivitas</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container form-page">
+
+  <a href="/activities" class="back-link">⬅ Kembali</a>
+
+  <div class="form-card">
+    <h2>➕ Tambah Aktivitas</h2>
+
+    <form method="POST" action="/activities/add" class="form-vertical">
+      <input type="text" name="judul_aktivitas" placeholder="Judul Aktivitas" required>
+      <input type="text" name="kategori" placeholder="Kategori" required>
+      <input type="date" name="tanggal" required>
+
+      <button class="btn btn-success">💾 Simpan Aktivitas</button>
+    </form>
+  </div>
+
+</div>
+
+</body>
+</html>

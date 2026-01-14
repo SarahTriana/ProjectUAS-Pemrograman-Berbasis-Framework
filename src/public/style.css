@@ -1,0 +1,462 @@
+/* =========================================================
+   GOOGLE FONT
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* =========================================================
+   GLOBAL RESET & BASE
+========================================================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', "Segoe UI", Arial, sans-serif;
+  background: radial-gradient(circle at top, #fffaf0, #fdf6ec, #f5ede3);
+  color: #3f3f46;
+  letter-spacing: 0.2px;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+.container {
+  max-width: 1150px;
+  margin: 50px auto;
+  background: linear-gradient(180deg, #ffffff, #fdfbf7);
+  border-radius: 22px;
+  padding: 32px 38px;
+  box-shadow: 0 18px 40px rgba(120, 85, 60, 0.08);
+  animation: fadeIn 0.6s ease;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.top h2 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: #7c5c3b;
+}
+
+/* =========================================================
+   BACK LINK
+========================================================= */
+.back-link {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #7c5c3b;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   INFO CARD (DETAIL AKTIVITAS)
+========================================================= */
+.info-card {
+  background: linear-gradient(180deg, #ffffff, #fdfbf7);
+  padding: 26px 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(120, 85, 60, 0.08);
+  margin-bottom: 28px;
+}
+
+.info-card h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #7c5c3b;
+}
+
+.info-meta {
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  color: #6b5a46;
+}
+
+/* =========================================================
+   FILTER BOX
+========================================================= */
+.filter-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 14px;
+  margin-bottom: 22px;
+  padding: 18px;
+  background: #fdf6ec;
+  border-radius: 14px;
+  border: 1px solid #e8ddcf;
+}
+
+.filter-box input {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #d6c8b8;
+  font-size: 14px;
+}
+
+.filter-box input:focus {
+  outline: none;
+  border-color: #c4a484;
+  box-shadow: 0 0 0 3px rgba(196,164,132,0.2);
+}
+
+/* =========================================================
+   FORM INLINE (TAMBAH DATA)
+========================================================= */
+.form-inline {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr auto;
+  gap: 14px;
+  background: #fdfbf7;
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 28px;
+  border: 1px solid #eee2d3;
+}
+
+.form-inline input,
+.form-inline select {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #d6c8b8;
+  font-size: 14px;
+}
+
+.form-inline input:focus,
+.form-inline select:focus {
+  outline: none;
+  border-color: #c4a484;
+  box-shadow: 0 0 0 3px rgba(196,164,132,0.2);
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-top: 24px;
+}
+
+th {
+  background: #f3e7d7;
+  color: #5b4630;
+  padding: 14px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee2d3;
+  font-size: 14px;
+  text-align: center;
+}
+
+td:nth-child(2) {
+  text-align: left;
+}
+
+tbody tr:hover {
+  background: #fdf6ec;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+.btn {
+  padding: 10px 20px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: #c4a484;
+  color: #ffffff;
+}
+
+.btn-success {
+  background: #a7c7b7;
+  color: #1f3d2b;
+}
+
+.btn-warning {
+  background: #f3d5a5;
+  color: #6b4f1d;
+}
+
+.btn-danger {
+  background: #e7b3b3;
+  color: #7a2e2e;
+}
+
+.btn-info {
+  background: #bcd4e6;
+  color: #1e3a5f;
+}
+
+/* =========================================================
+   BADGE
+========================================================= */
+.badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.badge-success {
+  background: #e2f0e8;
+  color: #355f47;
+}
+
+.badge-warning {
+  background: #fff1d6;
+  color: #7a5a20;
+}
+
+/* =========================================================
+   EDIT PAGE (EDIT AKTIVITAS & EDIT DETAIL)
+========================================================= */
+.box {
+  max-width: 520px;
+  margin: 80px auto;
+  background: linear-gradient(180deg, #ffffff, #fdfbf7);
+  padding: 36px 40px;
+  border-radius: 26px;
+  box-shadow: 0 25px 55px rgba(120, 85, 60, 0.15);
+  animation: fadeIn 0.6s ease;
+}
+
+.box h2 {
+  margin-top: 0;
+  margin-bottom: 28px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #7c5c3b;
+  text-align: center;
+}
+
+/* =========================================================
+   FORM EDIT (VERTICAL & CLEAN)
+========================================================= */
+.box form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.box input,
+.box select {
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #d6c8b8;
+  font-size: 14px;
+  font-family: inherit;
+  background: #ffffff;
+}
+
+.box input::placeholder {
+  color: #a59a8b;
+}
+
+.box input:focus,
+.box select:focus {
+  outline: none;
+  border-color: #c4a484;
+  box-shadow: 0 0 0 3px rgba(196,164,132,0.2);
+}
+
+/* =========================================================
+   BUTTON SIMPAN
+========================================================= */
+.box button {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+  background: #c4a484;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.6px;
+  transition: 0.25s;
+}
+
+.box button:hover {
+  background: #b0916f;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   LINK KEMBALI
+========================================================= */
+.box a {
+  display: block;
+  margin-top: 22px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #7c5c3b;
+  text-decoration: none;
+}
+
+.box a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   RESPONSIVE EDIT PAGE
+========================================================= */
+@media (max-width: 768px) {
+  .box {
+    margin: 20px;
+    padding: 26px;
+  }
+}
+
+
+/* =========================================================
+   AUTH / LOGIN PAGE
+========================================================= */
+.auth-body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #fffaf0, #fdf6ec, #f5ede3);
+}
+
+.auth-card {
+  width: 380px;
+  background: linear-gradient(180deg, #ffffff, #fdfbf7);
+  padding: 46px 42px;
+  border-radius: 30px;
+  box-shadow: 0 35px 70px rgba(120, 85, 60, 0.18);
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+.auth-card h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #7c5c3b;
+}
+
+.auth-subtitle {
+  margin: 8px 0 28px;
+  font-size: 13px;
+  color: #8b7a66;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-form input {
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #d6c8b8;
+  font-size: 14px;
+}
+
+.auth-form input::placeholder {
+  color: #a59a8b;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #c4a484;
+  box-shadow: 0 0 0 3px rgba(196,164,132,0.2);
+}
+
+.btn-login {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 13px;
+  letter-spacing: 0.6px;
+}
+
+.auth-footer {
+  margin-top: 26px;
+  font-size: 11px;
+  color: #9a8c7a;
+}
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 768px) {
+
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .filter-box,
+  .form-inline {
+    grid-template-columns: 1fr;
+  }
+
+  .info-meta {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
