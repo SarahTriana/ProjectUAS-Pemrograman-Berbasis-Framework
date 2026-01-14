@@ -3,7 +3,7 @@
 
 ---
 
-## 👤 Identitas Mahasiswa
+## 👤 
 - **Nama** : Sarah Triana  
 - **NIM**  : 202312054  
 - **Mata Kuliah** : Pemrograman Berbasis Framework 
@@ -22,41 +22,40 @@ Aplikasi dikembangkan menggunakan:
 - **EJS (Embedded JavaScript Template)**
 
 ---
-
-
-## ⚙️ Cara Install & Menjalankan Aplikasi
+## ⚙️ Cara Instalasi & Menjalankan Aplikasi
 
 ### 1️⃣ Clone Repository
-```bash
-git clone https://github.com/username/ProjectUAS-Sarah.git
-cd ProjectUAS-Sarah
-
+        ```bash
+        git clone https://github.com/username/ProjectUAS-Sarah.git
+        cd ProjectUAS-Sarah
+        
 ### 2️⃣ Install Dependency
-```bash
-npm install
+        ```bash
+        npm install
+        
+### 3️⃣ Membuat Database
+        Buat database MySQL dengan nama:
+        ```bash
+        CREATE DATABASE db_aktivitas;
+        
+### 4️⃣ Konfigurasi Prisma
+        Pastikan konfigurasi database pada file prisma/schema.prisma:
+        ```bash
+        datasource db {
+          provider = "mysql"
+          url      = "mysql://root:@localhost:3306/db_aktivitas"
+        }
+        
+### 5️⃣ Migrasi Database
+        ```bash
+        npx prisma migrate dev --name init
+        
+### 6️⃣ Menjalankan Server
+        ```bash
+        npm src/app.js
 
-### 3️⃣ **Buat Database**
-Buat database MySQL dengan nama:
-```bash
-CREATE DATABASE db_aktivitas;
 
-4️⃣ **Konfigurasi Prisma**
-Pastikan konfigurasi database pada file prisma/schema.prisma:
-```bash
-datasource db {
-  provider = "mysql"
-  url      = "mysql://root:@localhost:3306/db_aktivitas"
-}
-
-5️⃣ **Migrasi Database**
-```bash
-npx prisma migrate dev --name init
-
-6️⃣ **Jalankan Server**
-```bash
-npm src/app.js
-
-Akses aplikasi melalui browser:
+## Akses aplikasi melalui browser:
 http://localhost:3000 
 
 ---
