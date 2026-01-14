@@ -31,26 +31,29 @@ Aplikasi dikembangkan menggunakan:
 git clone https://github.com/username/ProjectUAS-Sarah.git
 cd ProjectUAS-Sarah
 
-### 2️⃣ **Install Dependency**
+2️⃣ Install Dependency
+```bash
 npm install
 
-### 3️⃣ **Buat Database**
+3️⃣ **Buat Database**
 Buat database MySQL dengan nama:
-
+```bash
 CREATE DATABASE db_aktivitas;
 
-### 4️⃣ **Konfigurasi Prisma**
+4️⃣ **Konfigurasi Prisma**
 Pastikan konfigurasi database pada file prisma/schema.prisma:
-
+```bash
 datasource db {
   provider = "mysql"
   url      = "mysql://root:@localhost:3306/db_aktivitas"
 }
 
-### 5️⃣ **Migrasi Database**
+5️⃣ **Migrasi Database**
+```bash
 npx prisma migrate dev --name init
 
-### 6️⃣ **Jalankan Server**
+6️⃣ **Jalankan Server**
+```bash
 npm src/app.js
 
 Akses aplikasi melalui browser:
