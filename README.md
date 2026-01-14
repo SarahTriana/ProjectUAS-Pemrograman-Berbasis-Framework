@@ -31,17 +31,15 @@ Aplikasi dikembangkan menggunakan:
 git clone https://github.com/username/ProjectUAS-Sarah.git
 cd ProjectUAS-Sarah
 
-### 2️⃣ Install Dependency
+### 2️⃣ **Install Dependency**
 npm install
 
-### 3️⃣ Buat Database
-
+### 3️⃣ **Buat Database**
 Buat database MySQL dengan nama:
 
 CREATE DATABASE db_aktivitas;
 
-### 4️⃣ Konfigurasi Prisma
-
+### 4️⃣ **Konfigurasi Prisma**
 Pastikan konfigurasi database pada file prisma/schema.prisma:
 
 datasource db {
@@ -49,70 +47,71 @@ datasource db {
   url      = "mysql://root:@localhost:3306/db_aktivitas"
 }
 
-### 5️⃣ Migrasi Database
-npx prisma migrate dev
+### 5️⃣ **Migrasi Database**
+npx prisma migrate dev --name init
 
-### 6️⃣ Jalankan Server
-npm start
-
+### 6️⃣ **Jalankan Server**
+npm src/app.js
 
 Akses aplikasi melalui browser:
-
-http://localhost:3000
+http://localhost:3000 
 
 ---
 
 ## 🗄️ Database Schema
+Struktur database pada aplikasi ini menggunakan **MySQL** dengan **Prisma ORM** dan menerapkan relasi **master–detail**.
+
+---
 
 ### 📌 Tabel `User`
 | Nama Kolom | Tipe Data | Keterangan |
-|-----------|----------|------------|
-| id | Int | Primary Key, Auto Increment |
-| username | String | Username unik untuk login |
-| password | String | Password user |
-| activities | Activity[] | Relasi ke tabel Activity |
+|------------|-----------|------------|
+| `id` | Int | Primary Key, Auto Increment |
+| `username` | String | Username unik untuk login |
+| `password` | String | Password user |
+| `activities` | Activity[] | Relasi ke tabel Activity |
 
 ---
 
 ### 📌 Tabel `Activity` (Master)
 | Nama Kolom | Tipe Data | Keterangan |
-|-----------|----------|------------|
-| id | Int | Primary Key, Auto Increment |
-| judul_aktivitas | String | Judul aktivitas |
-| kategori | String | Kategori aktivitas |
-| tanggal | DateTime | Tanggal pelaksanaan aktivitas |
-| user_id | Int | Foreign Key ke tabel User |
-| details | ActivityDetail[] | Relasi ke tabel ActivityDetail |
+|------------|-----------|------------|
+| `id` | Int | Primary Key, Auto Increment |
+| `judul_aktivitas` | String | Judul aktivitas |
+| `kategori` | String | Kategori aktivitas |
+| `tanggal` | DateTime | Tanggal pelaksanaan aktivitas |
+| `user_id` | Int | Foreign Key ke tabel User |
+| `details` | ActivityDetail[] | Relasi ke tabel ActivityDetail |
 
 ---
 
 ### 📌 Tabel `ActivityDetail` (Detail)
 | Nama Kolom | Tipe Data | Keterangan |
-|-----------|----------|------------|
-| id | Int | Primary Key, Auto Increment |
-| aktivitas_id | Int | Foreign Key ke tabel Activity |
-| nomor_detail | Int | Nomor urutan detail aktivitas |
-| deskripsi_detail | String | Deskripsi detail aktivitas |
-| durasi | Int | Durasi aktivitas (menit) |
-| status | String | Status aktivitas (Selesai / Proses) |
+|------------|-----------|------------|
+| `id` | Int | Primary Key, Auto Increment |
+| `aktivitas_id` | Int | Foreign Key ke tabel Activity |
+| `nomor_detail` | Int | Nomor urutan detail aktivitas |
+| `deskripsi_detail` | String | Deskripsi detail aktivitas |
+| `durasi` | Int | Durasi aktivitas (menit) |
+| `status` | String | Status aktivitas (Selesai / Proses) |
 
 ---
 
 ### 🔗 Relasi Antar Tabel
 - **User → Activity** : One to Many  
 - **Activity → ActivityDetail** : One to Many  
-- Setiap aktivitas hanya dimiliki oleh satu user  
-- Setiap detail aktivitas terhubung ke satu aktivitas utama
+- Setiap aktivitas dimiliki oleh satu user  
+- Setiap detail terhubung ke satu aktivitas utama  
 
 ---
 
-🔐 Akun Dummy Login
+**🔐 Akun Dummy Login**
 Gunakan akun berikut untuk login ke sistem:
 
 Username : admin
 Password : 123456
 
-🚀 Fitur Aplikasi
+**🚀 Fitur Aplikasi**
 - Login dan autentikasi user
 - CRUD data aktivitas (master)
 - CRUD detail aktivitas (detail)
@@ -120,5 +119,5 @@ Password : 123456
 - Tampilan antarmuka responsif dan profesional
 
 
-Link video demo YouTube:
+**Link video demo YouTube:**
 https://youtu.be/YEAp24vROH0 
