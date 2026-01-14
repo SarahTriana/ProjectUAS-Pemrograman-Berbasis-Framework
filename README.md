@@ -31,11 +31,11 @@ Aplikasi dikembangkan menggunakan:
 git clone https://github.com/username/ProjectUAS-Sarah.git
 cd ProjectUAS-Sarah
 
-2️⃣ Install Dependency
+### 2️⃣ Install Dependency
 ```bash
 npm install
 
-3️⃣ **Buat Database**
+### 3️⃣ **Buat Database**
 Buat database MySQL dengan nama:
 ```bash
 CREATE DATABASE db_aktivitas;
