@@ -107,12 +107,15 @@ http://localhost:3000
 ---
 
 **🔐 Akun Dummy Login**
+
 Gunakan akun berikut untuk login ke sistem:
 
 Username : admin
+
 Password : 123456
 
 **🚀 Fitur Aplikasi**
+
 - Login dan autentikasi user
 - CRUD data aktivitas (master)
 - CRUD detail aktivitas (detail)
